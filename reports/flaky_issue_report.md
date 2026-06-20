@@ -6,7 +6,7 @@
 
 **Instability Score:** 0.67
 
-**Probable Cause:** High instability detected. Possible timing issue, race condition, or external dependency.
+**Probable Cause:** Repeated failure pattern detected. Most common error: TimeoutError
 
 ---
 
