@@ -1,3 +1,4 @@
+from detector.github_issue_creator import create_github_issue
 from detector.log_parser import parse_log
 from detector.flake_detector import detect_flaky_tests
 from detector.root_cause_analyzer import analyze_root_cause
@@ -25,3 +26,17 @@ report = generate_issue(
 )
 
 print(report)
+
+if flaky_tests:
+
+    first_test = list(flaky_tests.keys())[0]
+
+    issue_title = f"Flaky Test Detected: {first_test}"
+
+    issue_url = create_github_issue(
+        issue_title,
+        report
+    )
+
+    print("\nGitHub Issue Created:")
+    print(issue_url)
