@@ -1,5 +1,6 @@
 from detector.log_parser import parse_log
 from detector.flake_detector import detect_flaky_tests
+from detector.root_cause_analyzer import analyze_root_cause
 from detector.issue_generator import generate_issue
 
 
@@ -16,6 +17,11 @@ for log in logs:
 
 flaky_tests = detect_flaky_tests(parsed_runs)
 
-report = generate_issue(flaky_tests)
+root_causes = analyze_root_cause(flaky_tests)
+
+report = generate_issue(
+    flaky_tests,
+    root_causes
+)
 
 print(report)
