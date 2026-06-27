@@ -199,4 +199,17 @@ The human engineer remains in control while repetitive investigative work is del
 **Kartiline AI Agent Hackathon 2026**
 
 **Idea #052 — Flaky Test Detective**
+## Demo Screenshots
+
+### Dashboard
+
+![Dashboard](dashboard.png)
+
+### AI Investigation
+
+![Investigation](investigation.png)
+
+### GitHub Issue Created by the Agent
+
+![GitHub Issue](github_issue.png)
 
