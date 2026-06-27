@@ -1,8 +1,8 @@
 # 🎥 Demo Video
 
-The complete demonstration is available here:
+Watch the complete project demonstration:
 
-[kartiline_agent_hackathon_demo_video.mp4](kartiline_agent_hackathon_demo_video.mp4)
+[kartiline_agent_hackathon_demo_video.mp4](./kartiline_agent_hackathon_demo_video.mp4)
 # 🕵️ Flaky Test Detective
 
 # An autonomous AI engineering agent that observes GitHub CI workflows, reasons about flaky test behavior, plans corrective actions, and automatically creates investigation issues for developers.
