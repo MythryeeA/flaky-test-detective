@@ -1,85 +1,202 @@
-# Flaky Test Detective
+# 🕵️ Flaky Test Detective
 
-An autonomous AI agent that identifies, investigates, and helps remediate flaky tests in CI/CD pipelines.
+# An autonomous AI engineering agent that observes GitHub CI workflows, reasons about flaky test behavior, plans corrective actions, and automatically creates investigation issues for developers.
 
-## Problem
+Built for the **Kartiline AI Agent Hackathon 2026**
+# Idea #052 – Flaky Test Detective
 
-Flaky tests are automated tests that fail intermittently despite no changes to the underlying code. Engineering teams waste significant time rerunning builds, manually inspecting logs, and determining whether failures represent genuine regressions or unreliable tests.
+# The Problem
 
-As flaky tests accumulate, developers lose trust in automated testing systems, slowing software delivery and increasing operational costs.
+Modern software teams rely heavily on Continuous Integration (CI) pipelines to validate every code change. Unfortunately, many teams encounter **flaky tests**—tests that randomly pass or fail despite no changes to the underlying code.
 
-## Solution
+These intermittent failures create uncertainty:
 
-Flaky Test Detective acts as an autonomous engineering assistant that continuously monitors CI/CD pipelines and investigates unstable test behavior.
+* Developers rerun workflows instead of fixing code.
+* Engineers waste time inspecting logs.
+* Release pipelines become slower.
+* Teams gradually lose trust in automated testing.
 
-The agent:
+The challenge is not simply detecting failures—it is determining **whether a failure is a genuine regression or merely an unstable test.**
 
-* Monitors workflow runs and test outcomes
-* Detects intermittent test failures
-* Computes instability scores
-* Identifies probable flaky tests
-* Generates evidence-backed reports
-* Creates GitHub Issues automatically
-* Suggests remediation actions
-* Optionally prepares quarantine pull requests
+# Our Solution
 
-## Agent Workflow
+Flaky Test Detective is an **autonomous AI engineering assistant** that continuously investigates CI workflows.
 
-### Perceive
+Rather than waiting for engineers to inspect failures manually, the agent:
 
-Collects:
+* Observes GitHub workflow executions
+* Detects flaky behavior from workflow history
+* Reasons about instability using deterministic logic and an LLM
+* Plans the appropriate engineering action
+* Automatically creates GitHub Issues containing investigation reports
 
-* Workflow execution logs
-* Test results
-* Commit metadata
-* Historical build outcomes
+The engineer remains in control while repetitive investigation work is automated.
 
-### Decide
+# Agent Lifecycle
 
-Analyzes:
+The agent follows a complete autonomous decision loop.
 
-* Failure frequency
-* Pass/fail inconsistencies
-* Historical behavior patterns
+```
+Observe
+    ↓
+Reason
+    ↓
+Plan
+    ↓
+Act
+```
 
-Calculates an instability score to distinguish flaky tests from genuine regressions.
+## 🔍 Observe
 
-### Act
+The agent continuously gathers evidence from GitHub.
 
-Creates:
+It collects:
 
-* Investigation reports
-* GitHub Issues
-* Root-cause summaries
-* Remediation recommendations
+* Workflow history
+* Pass/fail outcomes
+* Repository metadata
+* Execution patterns
 
-Optionally proposes quarantine pull requests for human review.
+## 🧠 Reason
 
-## MVP Scope
+The agent combines:
 
-The initial MVP focuses on:
+* Deterministic flakiness scoring
+* Pattern analysis
+* LLM-based engineering reasoning
 
-1. Monitoring GitHub Actions workflow runs
-2. Detecting intentionally simulated flaky tests
-3. Computing instability scores
-4. Automatically generating investigation reports
-5. Creating GitHub Issues through GitHub APIs
+It determines whether the observed behavior is likely caused by flaky tests.
 
-## Tech Stack
+## 📋 Plan
+
+After reasoning, the agent decides the appropriate engineering action.
+
+Examples:
+
+* Monitor further
+* Investigate
+* Create GitHub Issue
+
+## ⚡ Act
+
+The agent automatically:
+
+* Generates an investigation report
+* Produces an engineering summary
+* Creates a GitHub Issue
+* Recommends the next debugging steps
+
+# Features
+
+* GitHub workflow monitoring
+* Flakiness detection engine
+* Instability score calculation
+* Confidence estimation
+* AI-generated investigation summary
+* Root cause suggestions
+* Automated GitHub Issue creation
+* Interactive Streamlit dashboard
+* Observe → Reason → Plan → Act visualization
+
+# Tech Stack
 
 * Python
-* GitHub Actions
-* GitHub REST API
-* PyGithub
 * Streamlit
-* SQLite
+* GitHub REST API
+* GitHub Actions
+* PyGithub
+* Groq LLM
+* Markdown Reports
 
-## Future Vision
+# Repository Structure
 
-The long-term vision is an autonomous CI reliability platform capable of detecting flaky tests, isolating root causes, executing git bisect workflows, and proactively maintaining engineering productivity.
+```
+detector/
+    github_workflow_reader.py
+    github_log_reader.py
+    flakiness_decision_engine.py
+    github_issue_creator.py
+    root_cause_analyzer.py
 
-## Hackathon
+sample_logs/
+reports/
 
-Kartiline AI Agent Hackathon 2026
+app.py
+agent.py
+run_agent.py
+```
 
-Idea #052 — Flaky Test Detective
+# Running the Project
+
+Clone the repository.
+
+```
+git clone <repo-url>
+```
+
+Install dependencies.
+
+```
+pip install -r requirements.txt
+```
+
+Configure your environment variables.
+
+```
+GITHUB_TOKEN=...
+GROQ_API_KEY=...
+```
+
+Run the Streamlit dashboard.
+
+```
+streamlit run app.py
+```
+
+Or execute the autonomous agent directly.
+
+```
+python run_agent.py
+```
+
+# Demo
+
+The Streamlit dashboard demonstrates the complete autonomous investigation workflow.
+
+During execution the agent:
+
+1. Observes GitHub workflow runs
+2. Reasons about flaky behavior
+3. Plans the engineering response
+4. Creates a GitHub Issue automatically
+
+# Future Work
+
+Future versions will include:
+
+* Automatic Pull Request generation
+* Test quarantine workflows
+* Git bisect integration
+* Multi-repository monitoring
+* Historical analytics dashboard
+* Slack and Microsoft Teams notifications
+
+# Why This Is Agentic
+
+Unlike rule-based automation, Flaky Test Detective performs a complete autonomous decision cycle.
+
+It:
+
+* Perceives engineering context from GitHub
+* Reasons about workflow instability
+* Plans the appropriate engineering response
+* Takes action by creating investigation issues
+
+The human engineer remains in control while repetitive investigative work is delegated to the AI agent.
+
+# Hackathon
+
+**Kartiline AI Agent Hackathon 2026**
+
+**Idea #052 — Flaky Test Detective**
+
