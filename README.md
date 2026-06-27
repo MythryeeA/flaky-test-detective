@@ -1,7 +1,8 @@
 # 🎥 Demo Video
 
-👉 **Watch the Demo Video:**  
-[Flaky Test Detective Demo](https://drive.google.com/file/d/12Bv6dcycI-yo5DAxwC2FRNn0NtHrBlrH/view?usp=sharing).
+▶️ Watch the complete demo here:
+
+https://youtu.be/yg2-zhfeKnY
 
 # 🕵️ Flaky Test Detective
 
